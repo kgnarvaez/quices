@@ -2,14 +2,14 @@
 var express = require('express');
 var mongoose = require ('mongoose');
 var bodyParser = require('body-parser');
-var question = require('./routers/questionRouter'); 
-var user = require('./routers/userRouter'); 
+var router = require('./routers/router'); 
+
 
 var app = express();  
+
   app.use(bodyParser.json());
-  app.use('/question', question);
-  app.use('/user', user);
-  
+  app.use('/', router);
+
   
 //database conection
 const config =

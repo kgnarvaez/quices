@@ -5,14 +5,14 @@ var userController = {};
 
 
 userController.create = function (req, res){
-    var user1 = new question(req.body);
+    var user1 = new user(req.body);
     user1.save(function(err) {
         if (err){
             console.log(err);
             res.status(500).jsonp({ err: 'Error' });
         }
         else{
-            console.log('Question a été créée');
+            console.log('User created');
             res.status(200).jsonp(user1); 
         }   
     });
@@ -24,6 +24,7 @@ userController.show = function (req, res){
                 res.status(500).jsonp({ err: 'Error' });
             }
         else {
+               
                 res.status(200).jsonp(user); 
             }
     });

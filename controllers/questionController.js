@@ -12,7 +12,7 @@ questionController.create = function (req, res){
             res.status(500).jsonp({ err: 'Error' });
         }
         else{
-            console.log('Question a été créée');
+            console.log('Question created');
             res.status(200).jsonp(question1); 
         }   
     });
@@ -50,7 +50,10 @@ questionController.update = function(req, res) {
         console.log(err);
         res.status(500).jsonp({ err: 'Error' });
       }
-      res.status(200).jsonp(question);
+      else{
+        console.log('Question updated');
+        res.status(200).jsonp(question);
+     }
     });
 };
 
